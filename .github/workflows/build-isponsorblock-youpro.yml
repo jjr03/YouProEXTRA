@@ -348,7 +348,7 @@ jobs:
           cyan -i youtube.ipa -o YouProExtra_${{ env.YT_VERSION }}.ipa -uwef $tweaks -n "${{ inputs.display_name }}" -b ${{ inputs.bundle_id }}
 
       - name: Create a Draft Release
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: youproextra-ipa${{ github.run_number }}
           name: YouProExtra_${{ env.YT_VERSION }} (${{ github.run_number }})
