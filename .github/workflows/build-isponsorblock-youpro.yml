@@ -183,6 +183,7 @@ jobs:
         run: |
           git clone --quiet --depth=1 https://github.com/mrdrvt99/YouPro.git
           cd YouPro
+          echo "YOUPRO_VERSION=$(grep '^Version:' DEBIAN/control | awk '{print $2}')" >> $GITHUB_ENV
           chmod -R 755 .
           dpkg-deb --root-owner-group -Zgzip --build . ../YouPro.deb
           mv ../YouPro.deb ${{ github.workspace }}/YouPro.deb
@@ -349,14 +350,14 @@ jobs:
           for f in *.deb; do
             [ -f "$f" ] && tweaks="$tweaks $f"
           done
-          cyan -i youtube.ipa -o YouProExtra_${{ env.YT_VERSION }}.ipa -uwef $tweaks -n "${{ inputs.display_name }}" -b ${{ inputs.bundle_id }}
+          cyan -i youtube.ipa -o YouProExtra_${{ env.YT_VERSION }}_${{ env.YOUPRO_VERSION }}.ipa -uwef $tweaks -n "${{ inputs.display_name }}" -b ${{ inputs.bundle_id }}
 
       - name: Create a Draft Release
         uses: softprops/action-gh-release@v3
         with:
           tag_name: youproextra-ipa${{ github.run_number }}
-          name: YouProExtra_${{ env.YT_VERSION }} (${{ github.run_number }})
-          files: YouProExtra_${{ env.YT_VERSION }}.ipa
+          name: YouProExtra_${{ env.YT_VERSION }}_${{ env.YOUPRO_VERSION }} (${{ github.run_number }})
+          files: YouProExtra_${{ env.YT_VERSION }}_${{ env.YOUPRO_VERSION }}.ipa
           draft: true
 
       - name: Job Summary - Build Complete
