@@ -1,8 +1,9 @@
 # YouProEXTRA
 
-YouPro 0.1 tweak provided by [@Alibusut](https://t.me/alibusut)
+### YouPro tweak provided by [@Alibusut](https://t.me/alibusut)
 
-  ### NOTE: Restart after first launch to fix UI issues
+  #### Updated to beta 2
+  #### NOTE: Restart after first launch to fix UI issues
   
 ## Main features
 - [YouPro](https://t.me/alibusut) - eg. Download Videos, No ads, Background Playback
