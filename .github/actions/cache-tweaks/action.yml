@@ -15,8 +15,6 @@ inputs:
     default: 'false'
   theos_commit:
     required: true
-  cyan_commit:
-    required: true
   youpip_commit:
     required: true
   ytuhd_commit:
