@@ -81,6 +81,7 @@ jobs:
       - name: Download and Validate Custom .deb
         run: |
           DEB_FILENAME=$(basename "${{ inputs.deb_url }}" | cut -d'?' -f1)
+          [[ "$DEB_FILENAME" != *.deb ]] && DEB_FILENAME="${DEB_FILENAME}.deb"
           wget "${{ inputs.deb_url }}" --quiet --no-verbose -O "$DEB_FILENAME"
           echo "CUSTOM_DEB_FILENAME=$DEB_FILENAME" >> $GITHUB_ENV
 
