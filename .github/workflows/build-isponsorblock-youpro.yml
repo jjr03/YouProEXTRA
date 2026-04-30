@@ -159,7 +159,7 @@ jobs:
           youspeed_commit: ${{ steps.commit_hashes.outputs.youspeed }}
           youmute_commit: ${{ steps.commit_hashes.outputs.youmute }}
           youloop_commit: ${{ steps.commit_hashes.outputs.youloop }}
-          alderis_commit: ${{ steps.commit_hashes.outputs.alderis }}
+#         alderis_commit: ${{ steps.commit_hashes.outputs.alderis }}
           youslider_commit: ${{ steps.commit_hashes.outputs.youslider }}
           youchoose_commit: ${{ steps.commit_hashes.outputs.youchoose }}
           ytsilentvote_commit: ${{ steps.commit_hashes.outputs.ytsilentvote }}
@@ -251,12 +251,12 @@ jobs:
           cd YouLoop && make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           mv packages/*.deb ${{ github.workspace }}/youloop.deb
 
-      - name: Clone and Build Alderis
-        if: steps.cache_tweaks.outputs.cache_alderis_hit != 'true'
-        run: |
-          git clone --quiet --depth=1 https://github.com/hbang/Alderis.git
-          cd Alderis && make clean package DEBUG=0 FINALPACKAGE=1 ARCHS=arm64
-          mv packages/*.deb ${{ github.workspace }}/alderis.deb
+#      - name: Clone and Build Alderis
+#        if: steps.cache_tweaks.outputs.cache_alderis_hit != 'true'
+#        run: |
+#          git clone --quiet --depth=1 https://github.com/hbang/Alderis.git
+#          cd Alderis && make clean package DEBUG=0 FINALPACKAGE=1 ARCHS=arm64
+#          mv packages/*.deb ${{ github.workspace }}/alderis.deb
 
       - name: Clone and Build YouSlider
         if: steps.cache_tweaks.outputs.cache_youslider_hit != 'true'
