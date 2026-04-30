@@ -5,7 +5,8 @@
   #### Updated to beta 2
   #### NOTE: Restart after first launch to fix UI issues
 
-  ##### EDIT: YOU CAN NOW BUILD YTLite with any YT version.
+# EDIT: YOU CAN NOW BUILD YTLite with any YT version.
+
 ## Main features
 - [YouPro](https://t.me/alibusut) - eg. Download Videos, No ads, Background Playback
 - [YTUHD](https://github.com/Tonwalter888/YTUHD) - Enables 4K streaming with 60pHDR capability 
